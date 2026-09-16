@@ -59,18 +59,13 @@ a {
 .logo-mark {
     width: 42px;
     height: 42px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
-    background: #f2f2f2;
     color: #08090b;
-
     font-family: "Barlow Condensed";
     font-size: 30px;
     font-weight: 900;
-
     transform: skew(-8deg);
 }
 
@@ -696,6 +691,7 @@ section:not(.hero) {
 .opponent {
     font-size: 12px;
     font-weight: 700;
+   float: right;
 }
 
 .result-status {
@@ -951,6 +947,9 @@ footer p {
         margin-right: auto;
     }
 }
-.smallicon {
+.flaga {
    width: 25px;
+}
+.logobaltic {
+   width: 30px;
 }
