@@ -594,6 +594,11 @@ section:not(.hero) {
             transparent 70%
         );
 }
+.playerphoto {
+   height: 470px;
+   position: absolute;
+   left: -40%;
+}
 
 .player-number {
     position: absolute;
