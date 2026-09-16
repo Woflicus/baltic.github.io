@@ -14,12 +14,23 @@
 html {
     scroll-behavior: smooth;
 }
+/* Ukrycie paska dla Chrome, Safari i Opera */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Ukrycie paska dla IE, Edge i Firefox */
+html,
+body {
+  -ms-overflow-style: none;  /* IE i Edge */
+  scrollbar-width: none;  /* Firefox */
+}
 
 body {
     background: #08090b;
     color: #f4f4f4;
     font-family: "Inter", sans-serif;
-   overflow: hidden;
 }
 
 a {
