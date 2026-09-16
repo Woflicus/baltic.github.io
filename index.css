@@ -14,20 +14,6 @@
 html {
     scroll-behavior: smooth;
 }
-/* Ukrycie paska dla Chrome, Safari i Opera */
-html::-webkit-scrollbar,
-body::-webkit-scrollbar {
-  display: none;
-}
-
-/* Ukrycie paska dla IE, Edge i Firefox */
-html,
-body {
-  overflow-y: scroll;        /* przewijanie */
-  -ms-overflow-style: none;  /* IE i Edge */
-  scrollbar-width: none;     /* Firefox */
-}
-
 
 body {
     background: #08090b;
