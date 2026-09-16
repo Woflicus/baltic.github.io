@@ -581,12 +581,9 @@ section:not(.hero) {
 
 .player-photo {
     position: absolute;
-
     width: 100%;
     height: 80%;
-
     bottom: 0;
-
     background:
         linear-gradient(
             to top,
@@ -597,7 +594,8 @@ section:not(.hero) {
 .playerphoto {
    height: 470px;
    position: absolute;
-   left: -40%;
+   left: -30%;
+   bottom: 0;
 }
 
 .player-number {
