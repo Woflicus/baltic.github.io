@@ -23,9 +23,11 @@ body::-webkit-scrollbar {
 /* Ukrycie paska dla IE, Edge i Firefox */
 html,
 body {
+  overflow-y: scroll;        /* przewijanie */
   -ms-overflow-style: none;  /* IE i Edge */
-  scrollbar-width: none;  /* Firefox */
+  scrollbar-width: none;     /* Firefox */
 }
+
 
 body {
     background: #08090b;
