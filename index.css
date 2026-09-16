@@ -19,6 +19,7 @@ body {
     background: #08090b;
     color: #f4f4f4;
     font-family: "Inter", sans-serif;
+   overflow: hidden;
 }
 
 a {
