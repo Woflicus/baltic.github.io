@@ -956,3 +956,7 @@ footer p {
 .logobaltic {
    width: 30px;
 }
+.newsimage {
+   width: 250px;
+   float: left;
+}
