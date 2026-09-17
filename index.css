@@ -455,22 +455,103 @@ section:not(.hero) {
     gap: 18px;
 }
 
+/* GŁÓWNA KARTA */
 .news-card {
-    background: #0d0f12;
-    border: 1px solid #1b1e22;
-    overflow: hidden;
+  background: #0d0f12;
+  border: 1px solid #1b1e22;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column; /* Układa elementy w pionie: najpierw obrazek, potem treść */
+  height: 100%; /* Sprawia, że karty w jednym rzędzie mają równą wysokość */
 }
+
+/* KONTENER NA OBRAZEK */
 .news-image {
-    height: 260px;
-    display: flex;
-   width: 100%;
+  position: relative; /* Pozwala na pozycjonowanie absolutne napisu (MECZE, ESPORT) */
+  width: 100%;
+  height: 240px; /* Stała wysokość dla obrazków w zwykłych kartach */
+  flex-shrink: 0; /* Zapobiega kurczeniu się obrazka */
+}
+
+/* KARTA WYRÓŻNIONA (Pierwsza z lewej) */
+.featured .news-image {
+  height: 320px; /* Pierwsza karta może mieć większy obrazek */
+}
+
+/* DOPASOWANIE SAMEGO OBRAZKA */
+.news-image img {
+  width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Obrazek wypełnia idealnie przestrzeń bez zniekształceń */
   display: block;
-    align-items: end;
-    padding: 20px;
-    background:
-        linear-gradient(135deg, #20262b, #0a0b0d);
+}
+
+/* ETYKIETY (INFORMACJE, MECZE, ESPORT) */
+.news-image span {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 5;
+  background: #ffffff;
+  color: #000000;
+  padding: 5px 10px;
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* KONTENER Z TEKSTEM POD OBRAZKIEM */
+.news-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Sprawia, że stopka z linkiem zawsze ląduje na samym dole */
+  gap: 10px;    /* Równe odstępy między datą, tytułem a linkiem */
+}
+
+.news-content small {
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.news-content h3 {
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.news-content p {
+  color: #94a3b8;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0 0 10px 0;
+}
+
+.news-content a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: bold;
+  margin-top: auto; /* Wypycha link "CZYTAJ WIĘCEJ" na dół karty */
+  display: inline-block;
+}
+
+.news-content a:hover {
+  text-decoration: underline;
+}
+
+/* GRADIENTY DLA KART BEZ OBRAZKÓW */
+.image-two {
+  background: linear-gradient(135deg, #283034, #0b0d0f);
+}
+
+.image-three {
+  background: linear-gradient(135deg, #20262b, #0a0b0d);
+}
+
 }
 
 .featured .news-image {
@@ -495,10 +576,6 @@ section:not(.hero) {
     font-size: 8px;
     font-weight: 800;
     letter-spacing: 1px;
-}
-
-.news-content {
-    padding: 25px;
 }
 
 .news-content small {
