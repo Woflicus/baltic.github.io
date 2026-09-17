@@ -5,8 +5,211 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BALTIC ESPORTS - Aktualności</title>
     <link rel="stylesheet" href="../index.css">
+    <style>
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            width: 100%;
+            background-color: #0a0a0a;
+            padding: 20px 0;
+            border-bottom: 1px solid #111;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo img {
+            max-height: 40px;
+            width: auto;
+        }
+
+        .nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav a {
+            color: #aaaaaa;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            letter-spacing: 1px;
+            transition: color 0.2s;
+        }
+
+        .nav a:hover, .nav a.active {
+            color: #ffffff;
+        }
+
+        .btn-join {
+            border: 1px solid #ffffff;
+            color: #ffffff;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .btn-join:hover {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        .news-article-container {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .article-category {
+            color: #666666;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .article-title {
+            font-size: 42px;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin: 0 0 20px 0;
+            letter-spacing: -1px;
+        }
+
+        .article-separator {
+            width: 100%;
+            height: 1px;
+            background-color: #222222;
+            margin-bottom: 40px;
+        }
+
+        .article-content-wrapper {
+            display: flex;
+            gap: 60px;
+            align-items: flex-start;
+        }
+
+        .article-text {
+            flex: 1.2;
+            font-size: 17px;
+            line-height: 1.7;
+            color: #cccccc;
+        }
+
+        .article-text p {
+            margin: 0 0 20px 0;
+        }
+
+        .article-list {
+            margin: 0 0 20px 0;
+            padding-left: 20px;
+        }
+
+        .article-list li {
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+
+        .article-image-box {
+            flex: 1;
+        }
+
+        .news-image {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-top: 20px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            border-bottom: 1px solid transparent;
+            transition: border 0.2s;
+        }
+
+        .btn-back:hover {
+            border-bottom: 1px solid #ffffff;
+        }
+
+        .footer {
+            background-color: #050505;
+            padding: 40px 0;
+            border-top: 1px solid #111;
+            margin-top: 100px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            font-size: 13px;
+            color: #555555;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        .footer-logo-img {
+            max-height: 24px;
+        }
+
+        .footer-links a {
+            color: #555555;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .footer-links a:hover {
+            color: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            .header-container, .article-content-wrapper, .footer-container {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            .nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .article-title {
+                font-size: 30px;
+            }
+        }
+    </style>
 </head>
 <body>
+
     <header class="header">
         <div class="header-container">
             <div class="logo">
@@ -28,10 +231,12 @@
             </div>
         </div>
     </header>
+
     <main class="news-article-container">
         <span class="article-category">STATYSTYKI / AKTUALNOŚCI</span>
         <h1 class="article-title">BALTIC ESPORTS na Poznań Game Arena 2026</h1>
         <div class="article-separator"></div>
+
         <section class="article-content-wrapper">
             <div class="article-text">
                 <p>Na tegorocznej edycji Poznań Game Arena będzie można spotkać zawodników z <strong>BALTIC Esports</strong>.</p>
@@ -43,11 +248,13 @@
                 <p>Będzie można ich rozpoznać za pomocą drużynowych koszulek BALTIC Esports. Zdjęcia mile widziane!</p>
                 <a href="../index.html" class="btn-back">← Powrót do strony głównej</a>
             </div>
+
             <div class="article-image-box">
                 <img src="../pga.jpg" alt="Poznań Game Arena 2026" class="news-image">
             </div>
         </section>
     </main>
+
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-logo">
@@ -63,5 +270,6 @@
             </div>
         </div>
     </footer>
+
 </body>
 </html>
