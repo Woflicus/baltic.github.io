@@ -4,206 +4,288 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BALTIC ESPORTS - Aktualności</title>
-    <link rel="stylesheet" href="../index.css">
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    
     <style>
-        body {
-            background-color: #000000;
-            color: #ffffff;
-            font-family: sans-serif;
+        :root {
+            --bg-color: #0b0c10;
+            --header-bg: rgba(11, 12, 16, 0.95);
+            --text-main: #ffffff;
+            --text-muted: #808080;
+            --border-color: #222222;
+            --font-headings: 'Oswald', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            overflow-x: hidden;
+        }
+
         .header {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            background-color: #0a0a0a;
-            padding: 20px 0;
-            border-bottom: 1px solid #111;
+            background-color: var(--header-bg);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            height: 80px;
         }
 
         .header-container {
-            max-width: 1200px;
+            max-width: 1400px;
+            height: 100%;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 20px;
+            padding: 0 40px;
+        }
+
+        .logo a {
+            display: flex;
+            align-items: center;
         }
 
         .logo img {
-            max-height: 40px;
+            height: 32px;
             width: auto;
         }
 
         .nav ul {
             list-style: none;
             display: flex;
-            gap: 30px;
-            margin: 0;
-            padding: 0;
+            gap: 40px;
         }
 
         .nav a {
-            color: #aaaaaa;
+            color: var(--text-main);
             text-decoration: none;
-            font-weight: bold;
-            font-size: 14px;
-            letter-spacing: 1px;
-            transition: color 0.2s;
+            font-family: var(--font-headings);
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: opacity 0.2s;
+            opacity: 0.7;
         }
 
         .nav a:hover, .nav a.active {
-            color: #ffffff;
+            opacity: 1;
         }
 
         .btn-join {
-            border: 1px solid #ffffff;
-            color: #ffffff;
-            padding: 10px 20px;
+            font-family: var(--font-headings);
+            border: 1px solid var(--text-main);
+            color: var(--text-main);
+            padding: 12px 28px;
             text-decoration: none;
             font-size: 13px;
-            font-weight: bold;
-            transition: background 0.2s, color 0.2s;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: background 0.3s, color 0.3s;
         }
 
         .btn-join:hover {
-            background-color: #ffffff;
-            color: #000000;
+            background-color: var(--text-main);
+            color: var(--bg-color);
         }
 
         .news-article-container {
-            max-width: 1200px;
-            margin: 80px auto;
-            padding: 0 20px;
+            max-width: 1400px;
+            margin: 180px auto 100px auto;
+            padding: 0 40px;
         }
 
         .article-category {
-            color: #666666;
-            font-size: 12px;
+            font-family: var(--font-headings);
+            color: var(--text-muted);
+            font-size: 11px;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             display: block;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .article-title {
-            font-size: 42px;
-            font-weight: 800;
+            font-family: var(--font-headings);
+            font-size: 56px;
+            font-weight: 700;
             text-transform: uppercase;
-            margin: 0 0 20px 0;
-            letter-spacing: -1px;
+            line-height: 1.1;
+            letter-spacing: 0.5px;
+            margin-bottom: 30px;
         }
 
         .article-separator {
             width: 100%;
             height: 1px;
-            background-color: #222222;
-            margin-bottom: 40px;
+            background-color: var(--border-color);
+            margin-bottom: 50px;
         }
 
         .article-content-wrapper {
-            display: flex;
-            gap: 60px;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 80px;
             align-items: flex-start;
         }
 
         .article-text {
-            flex: 1.2;
-            font-size: 17px;
-            line-height: 1.7;
-            color: #cccccc;
+            font-size: 15px;
+            line-height: 1.8;
+            color: #b3b4b6;
         }
 
         .article-text p {
-            margin: 0 0 20px 0;
+            margin-bottom: 24px;
+        }
+
+        .article-text strong {
+            color: var(--text-main);
         }
 
         .article-list {
-            margin: 0 0 20px 0;
-            padding-left: 20px;
+            list-style: none;
+            margin-bottom: 24px;
         }
 
         .article-list li {
+            position: relative;
+            padding-left: 20px;
             margin-bottom: 8px;
-            color: #ffffff;
+            color: var(--text-main);
+        }
+
+        .article-list li::before {
+            content: "-";
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
         }
 
         .article-image-box {
-            flex: 1;
+            position: relative;
+            background: linear-gradient(135deg, #16171b 0%, #0f1013 100%);
+            border: 1px solid var(--border-color);
+            padding: 2px;
         }
 
         .news-image {
             width: 100%;
             height: auto;
-            border-radius: 4px;
+            display: block;
         }
 
         .btn-back {
-            display: inline-block;
-            margin-top: 20px;
-            color: #ffffff;
+            display: inline-flex;
+            align-items: center;
+            margin-top: 40px;
+            color: var(--text-muted);
             text-decoration: none;
-            font-size: 14px;
-            border-bottom: 1px solid transparent;
-            transition: border 0.2s;
+            font-family: var(--font-headings);
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: color 0.2s;
         }
 
         .btn-back:hover {
-            border-bottom: 1px solid #ffffff;
+            color: var(--text-main);
         }
 
         .footer {
-            background-color: #050505;
-            padding: 40px 0;
-            border-top: 1px solid #111;
-            margin-top: 100px;
+            border-top: 1px solid var(--border-color);
+            padding: 60px 0;
+            margin-top: 120px;
+            background-color: #060709;
         }
 
         .footer-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 20px;
-            font-size: 13px;
-            color: #555555;
+            padding: 0 40px;
         }
 
         .footer-logo {
             display: flex;
             align-items: center;
-            gap: 10px;
-            color: #ffffff;
-            font-weight: bold;
+            gap: 12px;
+            font-family: var(--font-headings);
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
 
         .footer-logo-img {
-            max-height: 24px;
+            height: 24px;
+            width: auto;
+        }
+
+        .footer-copyright {
+            font-size: 11px;
+            color: #444444;
+            font-family: var(--font-body);
+            letter-spacing: 1px;
         }
 
         .footer-links a {
-            color: #555555;
+            color: #444444;
             text-decoration: none;
-            margin-left: 20px;
+            font-family: var(--font-headings);
+            font-size: 11px;
+            letter-spacing: 2px;
+            margin-left: 30px;
+            transition: color 0.2s;
         }
 
         .footer-links a:hover {
-            color: #ffffff;
+            color: var(--text-main);
+        }
+
+        @media (max-width: 992px) {
+            .article-content-wrapper {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .article-title {
+                font-size: 42px;
+            }
+            .header-container, .footer-container {
+                padding: 0 20px;
+            }
+            .news-article-container {
+                padding: 0 20px;
+                margin-top: 140px;
+            }
         }
 
         @media (max-width: 768px) {
-            .header-container, .article-content-wrapper, .footer-container {
+            .nav {
+                display: none;
+            }
+            .footer-container {
                 flex-direction: column;
-                gap: 20px;
+                gap: 24px;
                 text-align: center;
             }
-            .nav ul {
-                flex-direction: column;
-                gap: 15px;
-            }
-            .article-title {
-                font-size: 30px;
+            .footer-links a {
+                margin: 0 15px;
             }
         }
     </style>
@@ -220,7 +302,7 @@
             <nav class="nav">
                 <ul>
                     <li><a href="../index.html#aktualnosci">AKTUALNOŚCI</a></li>
-                    <li><a href="../index.html#mecze" class="active">MECZE</a></li>
+                    <li><a href="../index.html#mecze">MECZE</a></li>
                     <li><a href="../index.html#druzyna">DRUŻYNA</a></li>
                     <li><a href="../index.html#wyniki">WYNIKI</a></li>
                     <li><a href="../index.html#sklep">SKLEP</a></li>
@@ -246,7 +328,7 @@
                     <li>Woflix</li>
                 </ul>
                 <p>Będzie można ich rozpoznać za pomocą drużynowych koszulek BALTIC Esports. Zdjęcia mile widziane!</p>
-                <a href="../index.html" class="btn-back">← Powrót do strony głównej</a>
+                <a href="../index.html" class="btn-back">← POWRÓT DO STRONY GŁÓWNEJ</a>
             </div>
 
             <div class="article-image-box">
@@ -266,10 +348,3 @@
             </div>
             <div class="footer-links">
                 <a href="#prywatnosc">PRYWATNOŚĆ</a>
-                <a href="#kontakt">KONTAKT</a>
-            </div>
-        </div>
-    </footer>
-
-</body>
-</html>
